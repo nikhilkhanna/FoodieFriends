@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ECEB518191DE61D00710A37 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECEB517191DE61D00710A37 /* FacebookSDK.framework */; };
 		1EDA750D191DDE6800DCA7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA750C191DDE6800DCA7AE /* Foundation.framework */; };
 		1EDA750F191DDE6800DCA7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA750E191DDE6800DCA7AE /* CoreGraphics.framework */; };
 		1EDA7511191DDE6800DCA7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA7510191DDE6800DCA7AE /* UIKit.framework */; };
@@ -19,6 +20,7 @@
 		1EDA7528191DDE6800DCA7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA7510191DDE6800DCA7AE /* UIKit.framework */; };
 		1EDA7530191DDE6800DCA7AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA752E191DDE6800DCA7AE /* InfoPlist.strings */; };
 		1EDA7532191DDE6800DCA7AE /* Foodie_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA7531191DDE6800DCA7AE /* Foodie_FriendsTests.m */; };
+		1EDA753C191DDE8800DCA7AE /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1ECEB517191DE61D00710A37 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1EDA7509191DDE6800DCA7AE /* Foodie Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA750C191DDE6800DCA7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1EDA750E191DDE6800DCA7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +51,7 @@
 		1EDA752D191DDE6800DCA7AE /* Foodie FriendsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Foodie FriendsTests-Info.plist"; sourceTree = "<group>"; };
 		1EDA752F191DDE6800DCA7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EDA7531191DDE6800DCA7AE /* Foodie_FriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Foodie_FriendsTests.m; sourceTree = "<group>"; };
+		1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EDA750F191DDE6800DCA7AE /* CoreGraphics.framework in Frameworks */,
+				1ECEB518191DE61D00710A37 /* FacebookSDK.framework in Frameworks */,
 				1EDA7511191DDE6800DCA7AE /* UIKit.framework in Frameworks */,
 				1EDA750D191DDE6800DCA7AE /* Foundation.framework in Frameworks */,
 			);
@@ -96,6 +101,7 @@
 		1EDA750B191DDE6800DCA7AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ECEB517191DE61D00710A37 /* FacebookSDK.framework */,
 				1EDA750C191DDE6800DCA7AE /* Foundation.framework */,
 				1EDA750E191DDE6800DCA7AE /* CoreGraphics.framework */,
 				1EDA7510191DDE6800DCA7AE /* UIKit.framework */,
@@ -109,6 +115,7 @@
 			children = (
 				1EDA751B191DDE6800DCA7AE /* FFAppDelegate.h */,
 				1EDA751C191DDE6800DCA7AE /* FFAppDelegate.m */,
+				1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */,
 				1EDA751E191DDE6800DCA7AE /* Images.xcassets */,
 				1EDA7513191DDE6800DCA7AE /* Supporting Files */,
 			);
@@ -192,6 +199,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nikhil Khanna";
 				TargetAttributes = {
+					1EDA7508191DDE6800DCA7AE = {
+						DevelopmentTeam = FUFG886MT6;
+					};
 					1EDA7523191DDE6800DCA7AE = {
 						TestTargetID = 1EDA7508191DDE6800DCA7AE;
 					};
@@ -222,6 +232,7 @@
 			files = (
 				1EDA7517191DDE6800DCA7AE /* InfoPlist.strings in Resources */,
 				1EDA751F191DDE6800DCA7AE /* Images.xcassets in Resources */,
+				1EDA753C191DDE8800DCA7AE /* iPhoneStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +373,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhilkhanna/Documents/Programming/Foodie\\ Friends",
+					/Users/nikhilkhanna/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Foodie Friends/Foodie Friends-Prefix.pch";
 				INFOPLIST_FILE = "Foodie Friends/Foodie Friends-Info.plist";
@@ -375,6 +392,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhilkhanna/Documents/Programming/Foodie\\ Friends",
+					/Users/nikhilkhanna/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Foodie Friends/Foodie Friends-Prefix.pch";
 				INFOPLIST_FILE = "Foodie Friends/Foodie Friends-Info.plist";
@@ -444,6 +467,7 @@
 				1EDA7537191DDE6800DCA7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EDA7538191DDE6800DCA7AE /* Build configuration list for PBXNativeTarget "Foodie FriendsTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +476,7 @@
 				1EDA753A191DDE6800DCA7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
