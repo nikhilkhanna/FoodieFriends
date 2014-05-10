@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E9A7699191DFCC700B2F9A0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A7698191DFCC700B2F9A0 /* Constants.m */; };
+		1E9A769C191E025F00B2F9A0 /* FFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */; };
 		1ECEB518191DE61D00710A37 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECEB517191DE61D00710A37 /* FacebookSDK.framework */; };
+		1ECEB51B191DF28B00710A37 /* FFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */; };
+		1ECEB51E191DF96700710A37 /* FFMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */; };
 		1EDA750D191DDE6800DCA7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA750C191DDE6800DCA7AE /* Foundation.framework */; };
 		1EDA750F191DDE6800DCA7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA750E191DDE6800DCA7AE /* CoreGraphics.framework */; };
 		1EDA7511191DDE6800DCA7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDA7510191DDE6800DCA7AE /* UIKit.framework */; };
@@ -34,7 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E9A7697191DFCC700B2F9A0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1E9A7698191DFCC700B2F9A0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		1E9A769A191E025F00B2F9A0 /* FFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecommendViewController.h; sourceTree = "<group>"; };
+		1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecommendViewController.m; sourceTree = "<group>"; };
 		1ECEB517191DE61D00710A37 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		1ECEB519191DF28B00710A37 /* FFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLoginViewController.h; sourceTree = "<group>"; };
+		1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLoginViewController.m; sourceTree = "<group>"; };
+		1ECEB51C191DF96700710A37 /* FFMainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMainScreenViewController.h; sourceTree = "<group>"; };
+		1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMainScreenViewController.m; sourceTree = "<group>"; };
 		1EDA7509191DDE6800DCA7AE /* Foodie Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDA750C191DDE6800DCA7AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1EDA750E191DDE6800DCA7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +127,14 @@
 			children = (
 				1EDA751B191DDE6800DCA7AE /* FFAppDelegate.h */,
 				1EDA751C191DDE6800DCA7AE /* FFAppDelegate.m */,
+				1ECEB51C191DF96700710A37 /* FFMainScreenViewController.h */,
+				1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */,
+				1ECEB519191DF28B00710A37 /* FFLoginViewController.h */,
+				1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */,
+				1E9A769A191E025F00B2F9A0 /* FFRecommendViewController.h */,
+				1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */,
+				1E9A7697191DFCC700B2F9A0 /* Constants.h */,
+				1E9A7698191DFCC700B2F9A0 /* Constants.m */,
 				1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */,
 				1EDA751E191DDE6800DCA7AE /* Images.xcassets */,
 				1EDA7513191DDE6800DCA7AE /* Supporting Files */,
@@ -251,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9A7699191DFCC700B2F9A0 /* Constants.m in Sources */,
 				1EDA751D191DDE6800DCA7AE /* FFAppDelegate.m in Sources */,
+				1ECEB51B191DF28B00710A37 /* FFLoginViewController.m in Sources */,
+				1E9A769C191E025F00B2F9A0 /* FFRecommendViewController.m in Sources */,
 				1EDA7519191DDE6800DCA7AE /* main.m in Sources */,
+				1ECEB51E191DF96700710A37 /* FFMainScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
