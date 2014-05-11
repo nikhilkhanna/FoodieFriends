@@ -12,5 +12,6 @@
 
 NSString* const kUserNameKey = @"userNameKey";
 NSString* const kUserIDKey   = @"userIDKey";
+NSString* const kGoogleAPIKey = @"AIzaSyCJP7_D_II9xQrPVEc2R5s1MO2OwanWZqY";
 
 @end

@@ -12,5 +12,6 @@
 
 extern NSString* const kUserNameKey;
 extern NSString* const kUserIDKey;
+extern NSString* const kGoogleAPIKey;
 
 @end
