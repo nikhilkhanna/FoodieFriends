@@ -19,6 +19,8 @@
 @property CLLocation *currentLocation;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *initialText;
+@property (weak, nonatomic) IBOutlet UILabel *noResultsText;
 @property NSArray *places;
 
 @end
@@ -41,6 +43,7 @@ static const double RADIUS = 50000;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showInitialTable];
     [self.searchBar setDelegate:self];
     [self.tableView setDataSource:self];
     [self createLocationManager];
@@ -66,6 +69,12 @@ static const double RADIUS = 50000;
 //upon updating location find close locations
 - (void) queryGooglePlaces:(NSString*) nameFragment
 {
+    //if there is no search entered
+    if([[nameFragment stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]] length] == 0)
+    {
+        [self showInitialTable];
+        return;
+    }
     NSString* escapedNameFragment = [self escapeName:nameFragment];
     //build url to send to google using data
     //TODO make types include restaurants food cafe, etc.
@@ -77,7 +86,7 @@ static const double RADIUS = 50000;
         NSData* data = [NSData dataWithContentsOfURL:googleRequestUrl];
         if (data == nil) {
             NSLog(@"NULL DATA!!!!");
-            //TODO update table to empty!
+            [self showNoResultsTable];
             return;
         }
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
@@ -102,25 +111,58 @@ static const double RADIUS = 50000;
         NSDictionary* place = [self.places objectAtIndex:i];
         NSLog(@"%d: %@", i, [place objectForKey:@"name"] );
     }
+    if([self.places count]==0)
+    {
+        [self showNoResultsTable];
+        return;
+    }
+    //reloading the table views
+    self.tableView.hidden = FALSE;
+    self.noResultsText.hidden = TRUE;
+    self.initialText.hidden = TRUE;
     [self.tableView reloadData];
 }
 
 
-//table view delegate methods
+-(void)showInitialTable
+{
+    self.tableView.hidden = TRUE;
+    self.initialText.hidden = FALSE;
+    self.noResultsText.hidden = TRUE;
+}
+
+-(void)showNoResultsTable
+{
+    self.tableView.hidden = TRUE;
+    self.initialText.hidden = TRUE;
+    self.noResultsText.hidden = FALSE;
+}
+
+//table view source methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.places count];
 }
 
+//makes a cell for the table view
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [[self.places objectAtIndex:indexPath.row] objectForKey:@"name"];
+    //occasionally count gets messed up and index out of bounds exceptions are hit
+    @try
+    {
+        NSDictionary* currentPlace = [self.places objectAtIndex:indexPath.row];
+        cell.textLabel.text = [currentPlace objectForKey:@"name"];
+        cell.detailTextLabel.text = [currentPlace objectForKey:@"vicinity"];
+    }
+    @catch (NSException *e) {
+
+    }
     return cell;
 }
 
