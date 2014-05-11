@@ -9,11 +9,12 @@
 #import "FFRecommendViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Constants.h"
- #import <QuartzCore/QuartzCore.h>
+#import <QuartzCore/QuartzCore.h>
+#import "FFDetailRecommendViewController.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
-@interface FFRecommendViewController () <CLLocationManagerDelegate, UISearchBarDelegate, UITableViewDataSource>
+@interface FFRecommendViewController () <CLLocationManagerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property CLLocation *currentLocation;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *initialText;
 @property (weak, nonatomic) IBOutlet UILabel *noResultsText;
 @property NSArray *places;
+@property NSDictionary *selectedPlace;
 
 @end
 
@@ -46,6 +48,7 @@ static const double RADIUS = 50000;
     [self showInitialTable];
     [self.searchBar setDelegate:self];
     [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
     [self createLocationManager];
 }
 
@@ -107,10 +110,6 @@ static const double RADIUS = 50000;
                              options:kNilOptions
                              error:&error];
     self.places = [jsonData objectForKey:@"results"];
-    for (int i = 0; i<[self.places count]; i++) {
-        NSDictionary* place = [self.places objectAtIndex:i];
-        NSLog(@"%d: %@", i, [place objectForKey:@"name"] );
-    }
     if([self.places count]==0)
     {
         [self showNoResultsTable];
@@ -164,6 +163,23 @@ static const double RADIUS = 50000;
 
     }
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:FALSE];
+    self.selectedPlace = [self.places objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"recommendDetailSegue" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"recommendDetailSegue"])
+    {
+        FFDetailRecommendViewController* detailsController = (FFDetailRecommendViewController*)segue.destinationViewController;
+        detailsController.place = self.selectedPlace;
+    }
+
 }
 
 //Search bar delegate method used to reset data when text is entered

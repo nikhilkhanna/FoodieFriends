@@ -124,6 +124,7 @@
                         <outlet property="searchBar" destination="lzL-aO-CBz" id="1hC-zf-rY2"/>
                         <outlet property="searchDisplayController" destination="DiN-Av-gEX" id="fF0-TI-jym"/>
                         <outlet property="tableView" destination="vJ0-Xr-0D4" id="YBx-c9-rWY"/>
+                        <segue destination="Jq6-HM-0ez" kind="push" identifier="recommendDetailSegue" id="C3C-j7-xdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zv-Rc-S8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,6 +139,25 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2105" y="-50"/>
+        </scene>
+        <!--Detail Recommend View Controller-->
+        <scene sceneID="yTO-QK-SuV">
+            <objects>
+                <viewController id="Jq6-HM-0ez" customClass="FFDetailRecommendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="azg-aJ-S9y"/>
+                        <viewControllerLayoutGuide type="bottom" id="lWJ-Ke-fbM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pr1-2x-6sB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H92-el-pdD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PK1-I6-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="-50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PSH-Pm-aaJ">
