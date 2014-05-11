@@ -67,6 +67,14 @@
     });
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString: @"submitSegue"])
+    {
+        //TODO Save all data
+    }
+}
+
 //text field delgate methods//
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {

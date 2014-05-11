@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gP8-Lt-ScP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EpJ-Yw-UqF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello IOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pW-gc-0So">
@@ -50,7 +50,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DAw-Eh-Pnp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eRM-4B-QCg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFO-gE-2FY">
@@ -82,7 +82,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Afu-bM-4vI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ohb-Js-HCR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-aO-CBz">
@@ -91,7 +91,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vJ0-Xr-0D4">
-                                <rect key="frame" x="0.0" y="109" width="320" height="459"/>
+                                <rect key="frame" x="0.0" y="109" width="320" height="371"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -149,7 +149,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lWJ-Ke-fbM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pr1-2x-6sB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-PB-7fd">
@@ -177,7 +177,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H92-el-pdD"/>
+                    <navigationItem key="navigationItem" id="H92-el-pdD">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="T3q-jG-GUL">
+                            <connections>
+                                <segue destination="EmF-pa-M0W" kind="unwind" identifier="submitSegue" unwindAction="unwindToMain:" id="yUa-95-dx4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="QFn-Hs-4bS" id="bV6-cg-7dq"/>
                         <outlet property="commentBox" destination="f14-tx-RX0" id="XLD-Nl-EDm"/>
@@ -186,6 +192,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PK1-I6-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EmF-pa-M0W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2577" y="-50"/>
         </scene>
@@ -229,6 +236,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
