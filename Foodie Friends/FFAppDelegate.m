@@ -8,11 +8,18 @@
 
 #import "FFAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 @implementation FFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBLoginView class];
+    
+    //parse methods
+    [Parse setApplicationId:@"ySfFNAnmxUn9bkSMj1AawWcec9wceUDABoClJstG"
+                  clientKey:@"L9YxP8YoQT3Q5KT2nPLqA7UmXkufyXroOG10qusx"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     return YES;
 }
 

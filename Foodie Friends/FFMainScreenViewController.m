@@ -25,9 +25,10 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad]; 
     NSString* userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserNameKey];
     self.navigationItem.title = [NSString stringWithFormat:@"Welcome, %@", userName];
+    
 	// Do any additional setup after loading the view.
 }
 

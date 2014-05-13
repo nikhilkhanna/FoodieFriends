@@ -8,6 +8,7 @@
 
 #import "FFDetailRecommendViewController.h"
 #import "Constants.h"
+#import <Parse/Parse.h>
 
 @interface FFDetailRecommendViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -71,8 +72,18 @@
 {
     if ([segue.identifier isEqualToString: @"submitSegue"])
     {
-        //TODO Save all data
+        [self saveRec];
     }
+}
+
+//saves a reccomendation
+-(void) saveRec
+{
+    PFObject *recommendationObject = [PFObject objectWithClassName:@"Recommendation"];
+    recommendationObject[@"reference"] = [self.place objectForKey:@"reference"];
+    recommendationObject[@"comment"] = self.commentBox.text;
+    recommendationObject[@"fbid"] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey];
+    [recommendationObject saveInBackground];
 }
 
 //text field delgate methods//
