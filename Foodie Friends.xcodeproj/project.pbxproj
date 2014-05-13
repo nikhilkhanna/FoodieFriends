@@ -20,6 +20,7 @@
 		1E9A7699191DFCC700B2F9A0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A7698191DFCC700B2F9A0 /* Constants.m */; };
 		1E9A769C191E025F00B2F9A0 /* FFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */; };
 		1E9A769F191F3F7E00B2F9A0 /* FFDetailRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A769E191F3F7E00B2F9A0 /* FFDetailRecommendViewController.m */; };
+		1EB2DE331921CC72005246BD /* FFViewRecommendationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2DE321921CC72005246BD /* FFViewRecommendationsViewController.m */; };
 		1ECEB518191DE61D00710A37 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECEB517191DE61D00710A37 /* FacebookSDK.framework */; };
 		1ECEB51B191DF28B00710A37 /* FFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */; };
 		1ECEB51E191DF96700710A37 /* FFMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */; };
@@ -65,6 +66,8 @@
 		1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecommendViewController.m; sourceTree = "<group>"; };
 		1E9A769D191F3F7E00B2F9A0 /* FFDetailRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDetailRecommendViewController.h; sourceTree = "<group>"; };
 		1E9A769E191F3F7E00B2F9A0 /* FFDetailRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDetailRecommendViewController.m; sourceTree = "<group>"; };
+		1EB2DE311921CC72005246BD /* FFViewRecommendationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFViewRecommendationsViewController.h; sourceTree = "<group>"; };
+		1EB2DE321921CC72005246BD /* FFViewRecommendationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFViewRecommendationsViewController.m; sourceTree = "<group>"; };
 		1ECEB517191DE61D00710A37 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1ECEB519191DF28B00710A37 /* FFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLoginViewController.h; sourceTree = "<group>"; };
 		1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLoginViewController.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */,
 				1E9A769D191F3F7E00B2F9A0 /* FFDetailRecommendViewController.h */,
 				1E9A769E191F3F7E00B2F9A0 /* FFDetailRecommendViewController.m */,
+				1EB2DE311921CC72005246BD /* FFViewRecommendationsViewController.h */,
+				1EB2DE321921CC72005246BD /* FFViewRecommendationsViewController.m */,
 				1E9A7697191DFCC700B2F9A0 /* Constants.h */,
 				1E9A7698191DFCC700B2F9A0 /* Constants.m */,
 				1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */,
@@ -322,6 +327,7 @@
 				1E9A769C191E025F00B2F9A0 /* FFRecommendViewController.m in Sources */,
 				1EDA7519191DDE6800DCA7AE /* main.m in Sources */,
 				1E9A769F191F3F7E00B2F9A0 /* FFDetailRecommendViewController.m in Sources */,
+				1EB2DE331921CC72005246BD /* FFViewRecommendationsViewController.m in Sources */,
 				1ECEB51E191DF96700710A37 /* FFMainScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

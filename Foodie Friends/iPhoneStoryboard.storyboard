@@ -64,14 +64,76 @@
                                     <segue destination="dlw-9u-thg" kind="modal" id="8ws-GX-mjJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWM-YX-RMw">
+                                <rect key="frame" x="54" y="280" width="212" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="View Recommendations">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sBY-Gt-Io2" kind="push" id="laq-nS-JrQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JY4-zT-iJU"/>
+                    <navigationItem key="navigationItem" id="JY4-zT-iJU">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="YQY-q2-R9w">
+                            <connections>
+                                <segue destination="9WE-Ae-owp" kind="push" id="BkT-Rd-SIe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sss-sa-JK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105" y="-50"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hNZ-E7-WU6">
+            <objects>
+                <viewController id="9WE-Ae-owp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2HV-bL-Dsl"/>
+                        <viewControllerLayoutGuide type="bottom" id="FbO-nG-t4U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tii-gX-MpK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-MQ-f8F" customClass="FBLoginView">
+                                <rect key="frame" x="57" y="124" width="195" height="285"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oXn-OL-d71"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9S-rN-6Z9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="592"/>
+        </scene>
+        <!--View Recommendations View Controller-->
+        <scene sceneID="mRT-IJ-Stt">
+            <objects>
+                <viewController id="sBY-Gt-Io2" customClass="FFViewRecommendationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ftw-E4-Rpy"/>
+                        <viewControllerLayoutGuide type="bottom" id="6u3-uo-BcS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gJz-lm-1nL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="02o-ZQ-3zB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Em-Yf-X4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579" y="592"/>
         </scene>
         <!--Recommend View Controller-->
         <scene sceneID="WUu-87-5jZ">

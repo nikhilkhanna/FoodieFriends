@@ -8,6 +8,7 @@
 
 #import "FFMainScreenViewController.h"
 #import "Constants.h"
+
 @interface FFMainScreenViewController ()
 
 @end
@@ -29,7 +30,7 @@
     NSString* userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserNameKey];
     self.navigationItem.title = [NSString stringWithFormat:@"Welcome, %@", userName];
     
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)unwindSegue

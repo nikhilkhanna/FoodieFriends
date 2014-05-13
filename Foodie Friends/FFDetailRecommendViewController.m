@@ -83,7 +83,7 @@
     recommendationObject[@"reference"] = [self.place objectForKey:@"reference"];
     recommendationObject[@"comment"] = self.commentBox.text;
     recommendationObject[@"fbid"] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey];
-    [recommendationObject saveInBackground];
+    [recommendationObject saveEventually];
 }
 
 //text field delgate methods//
