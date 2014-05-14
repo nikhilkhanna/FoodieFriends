@@ -10,7 +10,6 @@
 
 @interface FFViewRecommendationsViewController : UIViewController
 
-@property NSArray* friendsOnApp;
 @property NSArray* recommendations;
 
 @end

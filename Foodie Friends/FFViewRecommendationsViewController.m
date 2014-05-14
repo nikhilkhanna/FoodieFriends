@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import "Constants.h"
+#import "AsyncImageView.h"
 
 @interface FFViewRecommendationsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *recommendationsTable;
@@ -41,17 +42,17 @@
     //gets all friends who use this app (they are the only ones who matter really)
     FBRequest* friendsRequest = [FBRequest requestForMyFriends];
     [friendsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        self.friendsOnApp = [result objectForKey:@"data"];
-        NSLog(@"%@",self.friendsOnApp);
+        NSArray* friendsOnApp = [result objectForKey:@"data"];
+        NSLog(@"%@",friendsOnApp);
         //queries DB to get all the relevent recommendations
-        [self queryDB];
+        [self queryDB:friendsOnApp];
     }];
 }
 
--(void)queryDB
+-(void)queryDB: (NSArray *)friendsOnApp
 {
     PFQuery* query = [PFQuery queryWithClassName:kParseClassName];
-    NSArray* IDArray = [self getFriendIDs];
+    NSArray* IDArray = [self getFriendIDs: friendsOnApp];
     [query whereKey:kParseFBIDKey containedIn:IDArray];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.recommendations = objects;
@@ -61,13 +62,15 @@
     }];
 }
 
--(NSArray*) getFriendIDs
+-(NSArray*) getFriendIDs: (NSArray *)friendsOnApp
 {
     NSMutableArray* ids = [[NSMutableArray alloc] init];
-    for(id<FBGraphUser> friend in self.friendsOnApp)
+    for(id<FBGraphUser> friend in friendsOnApp)
     {
         [ids addObject:friend.id];
     }
+    //ADDS MY OWN RECCOMENDATIONS TO THE TABLE FOR TESTING PURPOSES
+    [ids addObject:[[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey]];//TEMP
     return ids;
 }
 
@@ -88,8 +91,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     PFObject* recToShow = [self.recommendations objectAtIndex:indexPath.row];
-    cell.textLabel.text = [recToShow objectForKey:kParsePlaceNameKey];
+    cell.textLabel.text = [NSString stringWithFormat: @"%@ recommends %@",
+                           [recToShow objectForKey:kParseUserFirstNameKey],
+                           [recToShow objectForKey:kParsePlaceNameKey]];
     cell.detailTextLabel.text = [recToShow objectForKey:kParsePlaceAddressKey];
+    [cell.imageView setImage:[UIImage imageNamed:@"loading.png"]];
+
+    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:
+                                                     @"https://graph.facebook.com/%@/picture?",
+                                                     [recToShow objectForKey:kParseFBIDKey]]];
+    cell.imageView.imageURL = profilePictureURL;
+    //[[AsyncImageLoader sharedLoader] loadImageWithURL:profilePictureURL target:profPic action:nil];
     return cell;
 }
 

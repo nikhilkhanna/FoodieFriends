@@ -37,6 +37,7 @@
 		1EDA7530191DDE6800DCA7AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA752E191DDE6800DCA7AE /* InfoPlist.strings */; };
 		1EDA7532191DDE6800DCA7AE /* Foodie_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA7531191DDE6800DCA7AE /* Foodie_FriendsTests.m */; };
 		1EDA753C191DDE8800DCA7AE /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */; };
+		1EDC78B219232E48008ECB9B /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDC78B119232E48008ECB9B /* AsyncImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		1EDA752F191DDE6800DCA7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EDA7531191DDE6800DCA7AE /* Foodie_FriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Foodie_FriendsTests.m; sourceTree = "<group>"; };
 		1EDA753B191DDE8800DCA7AE /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		1EDC78B019232E48008ECB9B /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		1EDC78B119232E48008ECB9B /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,12 +174,14 @@
 		1EDA7512191DDE6800DCA7AE /* Foodie Friends */ = {
 			isa = PBXGroup;
 			children = (
+				1EDC78B019232E48008ECB9B /* AsyncImageView.h */,
+				1EDC78B119232E48008ECB9B /* AsyncImageView.m */,
 				1EDA751B191DDE6800DCA7AE /* FFAppDelegate.h */,
 				1EDA751C191DDE6800DCA7AE /* FFAppDelegate.m */,
-				1ECEB51C191DF96700710A37 /* FFMainScreenViewController.h */,
-				1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */,
 				1ECEB519191DF28B00710A37 /* FFLoginViewController.h */,
 				1ECEB51A191DF28B00710A37 /* FFLoginViewController.m */,
+				1ECEB51C191DF96700710A37 /* FFMainScreenViewController.h */,
+				1ECEB51D191DF96700710A37 /* FFMainScreenViewController.m */,
 				1E9A769A191E025F00B2F9A0 /* FFRecommendViewController.h */,
 				1E9A769B191E025F00B2F9A0 /* FFRecommendViewController.m */,
 				1E9A769D191F3F7E00B2F9A0 /* FFDetailRecommendViewController.h */,
@@ -322,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9A7699191DFCC700B2F9A0 /* Constants.m in Sources */,
+				1EDC78B219232E48008ECB9B /* AsyncImageView.m in Sources */,
 				1EDA751D191DDE6800DCA7AE /* FFAppDelegate.m in Sources */,
 				1ECEB51B191DF28B00710A37 /* FFLoginViewController.m in Sources */,
 				1E9A769C191E025F00B2F9A0 /* FFRecommendViewController.m in Sources */,

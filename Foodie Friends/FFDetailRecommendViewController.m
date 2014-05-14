@@ -83,6 +83,9 @@
     recommendationObject[kParseReferenceKey] = [self.place objectForKey:@"reference"];
     recommendationObject[kParseCommentKey] = self.commentBox.text;
     recommendationObject[kParseFBIDKey] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey];
+    recommendationObject[kParsePlaceNameKey] = [self.place objectForKey:@"name"];
+    recommendationObject[kParsePlaceAddressKey] = [self.place objectForKey:@"vicinity"];
+    recommendationObject[kParseUserFirstNameKey] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserFirstNameKey];
     [recommendationObject saveEventually];
 }
 

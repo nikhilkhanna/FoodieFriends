@@ -38,6 +38,8 @@
 {
     [[NSUserDefaults standardUserDefaults] setObject:user.name forKey:kUserNameKey];
     [[NSUserDefaults standardUserDefaults] setObject:user.id forKey:kUserIDKey];
+    [[NSUserDefaults standardUserDefaults] setObject:user.first_name forKey:kUserFirstNameKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 
