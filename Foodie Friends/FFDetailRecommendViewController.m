@@ -79,10 +79,10 @@
 //saves a reccomendation
 -(void) saveRec
 {
-    PFObject *recommendationObject = [PFObject objectWithClassName:@"Recommendation"];
-    recommendationObject[@"reference"] = [self.place objectForKey:@"reference"];
-    recommendationObject[@"comment"] = self.commentBox.text;
-    recommendationObject[@"fbid"] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey];
+    PFObject *recommendationObject = [PFObject objectWithClassName:kParseClassName];
+    recommendationObject[kParseReferenceKey] = [self.place objectForKey:@"reference"];
+    recommendationObject[kParseCommentKey] = self.commentBox.text;
+    recommendationObject[kParseFBIDKey] = [[NSUserDefaults standardUserDefaults] objectForKey:kUserIDKey];
     [recommendationObject saveEventually];
 }
 

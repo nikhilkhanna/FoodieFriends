@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9S-rN-6Z9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="592"/>
+            <point key="canvasLocation" x="579" y="592"/>
         </scene>
         <!--View Recommendations View Controller-->
         <scene sceneID="mRT-IJ-Stt">
@@ -127,9 +127,19 @@
                     <view key="view" contentMode="scaleToFill" id="gJz-lm-1nL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-13-dW4">
+                                <rect key="frame" x="0.0" y="123" width="320" height="357"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="02o-ZQ-3zB"/>
+                    <connections>
+                        <outlet property="recommendationsTable" destination="ppr-13-dW4" id="fxF-V8-i08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Em-Yf-X4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

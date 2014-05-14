@@ -13,5 +13,11 @@
 extern NSString* const kUserNameKey;
 extern NSString* const kUserIDKey;
 extern NSString* const kGoogleAPIKey;
+extern NSString* const kParseReferenceKey;
+extern NSString* const kParseCommentKey;
+extern NSString* const kParseFBIDKey;
+extern NSString* const kParseClassName;
+extern NSString* const kParsePlaceNameKey;
+extern NSString* const kParsePlaceAddressKey;
 
 @end
