@@ -139,11 +139,31 @@
                     <navigationItem key="navigationItem" id="02o-ZQ-3zB"/>
                     <connections>
                         <outlet property="recommendationsTable" destination="ppr-13-dW4" id="fxF-V8-i08"/>
+                        <segue destination="UWh-Zo-o3y" kind="push" identifier="viewDetails" id="Bcv-mr-eQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Em-Yf-X4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1579" y="592"/>
+        </scene>
+        <!--View Detail Recommendation View Controller-->
+        <scene sceneID="5Lb-A9-QiR">
+            <objects>
+                <viewController id="UWh-Zo-o3y" customClass="FFViewDetailRecommendationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCs-VI-FkC"/>
+                        <viewControllerLayoutGuide type="bottom" id="FaJ-dc-e0k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="66j-JN-xMh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IW1-Px-nNo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jd7-wH-eJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2105" y="592"/>
         </scene>
         <!--Recommend View Controller-->
         <scene sceneID="WUu-87-5jZ">

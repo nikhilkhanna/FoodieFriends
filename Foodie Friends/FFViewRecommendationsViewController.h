@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
 @interface FFViewRecommendationsViewController : UIViewController
 
 @property NSArray* recommendations;
+@property PFObject* recToShow;
 
 @end

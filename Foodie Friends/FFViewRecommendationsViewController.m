@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "Constants.h"
 #import "AsyncImageView.h"
+#import "FFViewDetailRecommendationViewController.h"
 
 @interface FFViewRecommendationsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *recommendationsTable;
@@ -58,7 +59,6 @@
         self.recommendations = objects;
         //TO DO, MAKE AN ARRAY OF RECOMMENDATIONS GROUPED BY RESTAURANT
         [self.recommendationsTable reloadData];
-        NSLog(@"%@",self.recommendations);
     }];
 }
 
@@ -91,18 +91,54 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     PFObject* recToShow = [self.recommendations objectAtIndex:indexPath.row];
+    //setting properties of cell labels
     cell.textLabel.text = [NSString stringWithFormat: @"%@ recommends %@",
                            [recToShow objectForKey:kParseUserFirstNameKey],
                            [recToShow objectForKey:kParsePlaceNameKey]];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
     cell.detailTextLabel.text = [recToShow objectForKey:kParsePlaceAddressKey];
+    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.detailTextLabel.numberOfLines = 0;
+    
+    //handling the cell image
     [cell.imageView setImage:[UIImage imageNamed:@"loading.png"]];
-
     NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:
                                                      @"https://graph.facebook.com/%@/picture?",
                                                      [recToShow objectForKey:kParseFBIDKey]]];
+    //make it asynchrounously load the profile picture
     cell.imageView.imageURL = profilePictureURL;
-    //[[AsyncImageLoader sharedLoader] loadImageWithURL:profilePictureURL target:profPic action:nil];
+
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.recommendationsTable deselectRowAtIndexPath:indexPath animated:FALSE];
+    self.recToShow = [self.recommendations objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"viewDetails" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"viewDetails"])
+    {
+        FFViewDetailRecommendationViewController* detailViewController = segue.destinationViewController;
+        detailViewController.recToShow = self.recToShow;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject* recToShow = [self.recommendations objectAtIndex:indexPath.row];
+    NSString* content = [NSString stringWithFormat: @"%@ recommends %@",
+    [recToShow objectForKey:kParseUserFirstNameKey],
+    [recToShow objectForKey:kParsePlaceNameKey]];
+    
+    // Max size you will permit
+    CGSize maxSize = CGSizeMake(200, 1000);
+    CGSize size = [content sizeWithFont:[UIFont fontWithName:@"Helvetica" size:17] constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
+    return size.height + 80;
 }
 
 - (void)didReceiveMemoryWarning
