@@ -12,4 +12,6 @@
 
 @property PFObject* recToShow;
 
+- (IBAction)getDirections:(id)sender;
+
 @end
